@@ -25,3 +25,18 @@ docker container ls
 
 ## Detener un container
 docker stop CONTAINER_ID
+
+
+--------------------------------------------------
+
+# Publicar imagen en Docker Hub
+
+## Prepara nombre de imagen
+
+- En el caso de Docker Hub necesitamos que nuestra imagen se llame nombre_de_usuario/nombre_del_repositorio:etiqueta
+
+docker tag flaskapp albertusortiz/flaskapp:v1
+
+- Si ejecutas docker images, te darás cuenta de que no ha modificado la imagen original sino que simplemente se ha creado una especie de alias sobre la misma imagen, ya que el id de la imagen, tanto de la original como de esta, es el mismo. Ahora que ya cumplimos los requerimientos, utilizamos el comando docker push para subir la imagen:
+
+docker push albertusortiz/flaskapp:v1
